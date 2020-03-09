@@ -6,6 +6,7 @@ namespace App\Services;
 use App\GitHubApi\GitHubApi;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\View\View;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class Utils
@@ -13,7 +14,7 @@ use FOS\RestBundle\View\View;
  */
 class Utils extends AbstractFOSRestController
 {
-    /** @var mixed $data */
+    /** @var mixed[] */
     private $data;
 
     public function __construct()
@@ -23,29 +24,26 @@ class Utils extends AbstractFOSRestController
 
     /**
      * get a list of github repositories languages
-     * @return View
+     * @return  View
      */
     public function listLanguages(): View{
 
         try {
             $languages = [];
             foreach ($this->data['items'] as $item){
-
                 if(!in_array($item['language'],$languages)){
                     $languages[] = $item['language'];
                 }
             }
-
             return $this->view($languages, Response::HTTP_OK);
-
         } catch (\Exception $e) {
-
             return $this->view(
                 [
                     'message' => 'Impossible to get languages',
                     'errorCode' => $e->getMessage()
                 ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
+
     }
 
     /**
