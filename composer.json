@@ -17,6 +17,7 @@
         "symfony/yaml": "4.4.*"
     },
     "require-dev": {
+        "phpstan/phpstan-symfony": "^0.12.4"
     },
     "config": {
         "preferred-install": {

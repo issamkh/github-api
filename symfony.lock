@@ -94,6 +94,12 @@
     "php": {
         "version": "7.2"
     },
+    "phpstan/phpstan": {
+        "version": "0.12.14"
+    },
+    "phpstan/phpstan-symfony": {
+        "version": "0.12.4"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
