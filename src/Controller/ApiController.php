@@ -29,7 +29,7 @@ class ApiController extends AbstractFOSRestController
 
 
     /**
-     * @Rest\Get("/repos/language/{lang}/count", name="count_repos")
+     * @Rest\Get("/repos/{lang}/count", name="count_repos")
      * @param Utils $utils
      * @param string $lang
      * @return View
@@ -41,7 +41,7 @@ class ApiController extends AbstractFOSRestController
     }
 
     /**
-     * @Rest\Get("/repos/language/{lang}" , name="list_repos")
+     * @Rest\Get("/repos/{lang}" , name="list_repos")
      * @param Utils $utils
      * @param string $lang
      * @return View
