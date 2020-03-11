@@ -76,7 +76,7 @@ class Utils extends AbstractFOSRestController
 
     /**
      * list of repositories by specific language
-     * @param $lang
+     * @param string $lang
      * @return View
      */
     public function listReposByLanguage($lang): View{
